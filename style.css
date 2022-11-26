@@ -1,5 +1,10 @@
 .bubble {
-    background-image: url("/Bubbles/Minimal.png");
+    background-image: url("/Bubbles/Bubble.png");
+    background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     background-position: center;
+    background-size: contain;
+    width: 128px;
+    height: 128px;
+    border: none;
 }
