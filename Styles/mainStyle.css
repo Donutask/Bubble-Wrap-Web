@@ -2,16 +2,16 @@ body {
     margin: 0px;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
+    /* variables */
+    --bubbleSize: 64px;
 }
 
 #bubblesLayout {
     width: calc(100vw - 50px);
-    height: calc(100vh - 50px - 30px);
+    height: calc(100vh - 15px - 50px - 45px);
     margin: 25px;
     padding: 0px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, 138px);
-    grid-template-rows: repeat(auto-fill, 138px);
 }
 
 .bubble {
@@ -20,8 +20,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    width: 128px;
-    height: 128px;
+    width: var(--bubbleSize);
+    height: var(--bubbleSize);
     padding: 0px;
     margin: 0px;
     border: none;
