@@ -1,3 +1,32 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+#popCount {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    font-size: 50px;
+    line-height: 50px;
+    margin-left: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#bubblesLayout {
+    width: calc(100vw - 50px);
+    height: calc(100vh - 50px - 30px);
+    margin: 25px;
+    /* width: 100vw;
+    height: 100vh;
+    padding: 0px; */
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 138px);
+    grid-template-rows: repeat(auto-fill, 138px);
+}
+
 .bubble {
     background-image: url("/Bubbles/Bubble.png");
     background-color: rgba(0, 0, 0, 0);
@@ -6,19 +35,12 @@
     background-size: contain;
     width: 128px;
     height: 128px;
-    border: none;
-}
-
-body {
-    margin: 0px;
-}
-
-#bubblesLayout {
-    width: 100vw;
-    height: 100vh;
     padding: 0px;
     margin: 0px;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 138px);
-    grid-template-rows: repeat(auto-fill, 138px);
+    border: none;
+    cursor: pointer;
+}
+
+.poppedBubble {
+    background-image: url("/Bubbles/Popped.png");
 }
