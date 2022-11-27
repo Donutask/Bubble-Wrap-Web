@@ -1,7 +1,7 @@
 let bubbleLayout = document.getElementById("bubblesLayout");
 let popCounter = document.getElementById("popCount");
 
-
+//Makes bubbles to try and fill screen
 function CreateBubbleWrap() {
     bubbleLayout.innerHTML = "";
 
@@ -26,6 +26,7 @@ let bubblesCreated = 0;
 let bubblesPopped = 0;
 let totalBubblesPopped = 0;
 
+//Creates a bubble element and append to grid
 function CreateBubble() {
     let bubble = document.createElement("button");
     bubble.className = "bubble";
@@ -38,6 +39,7 @@ function CreateBubble() {
     return bubble;
 }
 
+//Play sound, change appearance and add to counter
 function PopBubble(bubble) {
     //don't pop twice
     if (bubble.classList.contains("poppedBubble")) {
@@ -56,12 +58,13 @@ function PopBubble(bubble) {
     }
 }
 
+//SFX
 let audioClips = [
-    new Audio("/Pops/Pop1.wav"),
-    new Audio("/Pops/Pop2.wav"),
-    new Audio("/Pops/Pop3.wav"),
-    new Audio("/Pops/Pop4.wav"),
-    new Audio("/Pops/Pop5.wav"),
+    new Audio("Pops/Pop1.wav"),
+    new Audio("Pops/Pop2.wav"),
+    new Audio("Pops/Pop3.wav"),
+    new Audio("Pops/Pop4.wav"),
+    new Audio("Pops/Pop5.wav"),
 ]
 
 function PopSound() {
@@ -69,6 +72,7 @@ function PopSound() {
 }
 
 
+//Save & Load
 function Save() {
     localStorage.setItem("pops", totalBubblesPopped);
 }
@@ -91,6 +95,7 @@ function Load() {
         popCounter.innerHTML = totalBubblesPopped;
     }
 }
+
 /**
  * Returns a random integer between min (inclusive) and max (inclusive).
  * The value is no lower than min (or the next integer greater than min
