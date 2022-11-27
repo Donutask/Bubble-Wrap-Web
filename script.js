@@ -32,7 +32,7 @@ function CreateBubble() {
     bubble.className = "bubble";
     //pop with mouse or touch
     bubble.onmouseenter = function() { PopBubble(bubble) };
-    bubble.ontouchstart = function() { PopBubble(bubble) };
+    bubble.ontouchmove = function() { PopBubble(bubble) };
 
     bubbleLayout.appendChild(bubble);
 

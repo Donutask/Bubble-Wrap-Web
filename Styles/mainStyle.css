@@ -26,6 +26,7 @@ body {
     margin: 0px;
     border: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .poppedBubble {
@@ -52,6 +53,7 @@ body {
 .link {
     color: grey;
     padding-left: 10px;
+    font-size: 0.9em;
 }
 
 .link:visited {
