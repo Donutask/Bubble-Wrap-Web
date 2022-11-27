@@ -1,26 +1,13 @@
 body {
     margin: 0px;
     overflow: hidden;
-}
-
-#popCount {
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    text-align: left;
-    font-size: 50px;
-    line-height: 50px;
-    margin-left: 35px;
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 #bubblesLayout {
     width: calc(100vw - 50px);
     height: calc(100vh - 50px - 30px);
     margin: 25px;
-    /* width: 100vw;
-    height: 100vh;
-    padding: 0px; */
     padding: 0px;
     display: grid;
     grid-template-columns: repeat(auto-fill, 138px);
@@ -43,4 +30,34 @@ body {
 
 .poppedBubble {
     background-image: url("Bubbles/Popped.png");
+}
+
+#popCount {
+    font-weight: 600;
+    text-align: left;
+    font-size: 50px;
+    line-height: 50px;
+    margin-left: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#links {
+    text-align: right;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.link {
+    color: grey;
+    padding-left: 10px;
+}
+
+.link:visited {
+    color: gray;
+}
+
+.link:hover {
+    color: blue;
 }
