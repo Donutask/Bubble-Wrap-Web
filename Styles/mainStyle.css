@@ -8,7 +8,7 @@ body {
 
 #bubblesLayout {
     width: calc(100vw - 50px);
-    height: calc(100vh - 15px - 50px - 45px);
+    height: calc(100vh - 15px - 50px - 60px);
     margin: 25px;
     padding: 0px;
     display: grid;
@@ -44,7 +44,7 @@ body {
 #popCount {
     font-weight: 600;
     text-align: left;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 50px;
     margin-left: 10px;
     margin-top: 0px;
@@ -56,14 +56,16 @@ body {
 /* same appearance for both themes */
 
 #refresh {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     color: whitesmoke;
 }
 
 #refreshIcon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
+    margin: 0px;
+    padding: 0px;
     filter: brightness(0%);
 }
 

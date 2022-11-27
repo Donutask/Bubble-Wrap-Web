@@ -13,7 +13,7 @@ function CreateBubbleWrap() {
     bubbleLayout.innerHTML = "";
 
     let columns = Math.round(((bubbleLayout.clientWidth - 50) / (bubbleSize + 10)));
-    let rows = Math.round((bubbleLayout.clientHeight - 50 - 50) / (bubbleSize + 10));
+    let rows = Math.round((bubbleLayout.clientHeight - 50) / (bubbleSize + 10));
 
     bubbleLayout.style.gridTemplateColumns = `repeat(${columns}, ${bubbleSize + 10}px)`;
     bubbleLayout.style.gridTemplateRows = `repeat(${rows}, ${bubbleSize + 10}px)`;
@@ -39,7 +39,7 @@ function CreateBubble() {
     bubble.className = "bubble";
     //pop with pointer
     // bubble.onmouseenter = function() { PopBubble(bubble) };
-    bubble.onpointerenter = function() { PopBubble(bubble) };
+    bubble.onpointerover = function() { PopBubble(bubble) };
     // bubble.onclick = function() { PopBubble(bubble) };
 
     bubbleLayout.appendChild(bubble);
