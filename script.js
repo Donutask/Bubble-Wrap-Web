@@ -3,6 +3,11 @@ let popCounter = document.getElementById("popCount");
 
 const bubbleSize = 64;
 
+//same as createbubblewrap
+function Refresh() {
+    CreateBubbleWrap();
+}
+
 //Makes bubbles to try and fill screen
 function CreateBubbleWrap() {
     bubbleLayout.innerHTML = "";
@@ -32,10 +37,10 @@ let totalBubblesPopped = 0;
 function CreateBubble() {
     let bubble = document.createElement("button");
     bubble.className = "bubble";
-    //pop with mouse or touch or click
-    bubble.onmouseenter = function() { PopBubble(bubble) };
-    bubble.ontouchmove = function() { PopBubble(bubble) };
-    bubble.onclick = function() { PopBubble(bubble) };
+    //pop with pointer
+    // bubble.onmouseenter = function() { PopBubble(bubble) };
+    bubble.onpointerenter = function() { PopBubble(bubble) };
+    // bubble.onclick = function() { PopBubble(bubble) };
 
     bubbleLayout.appendChild(bubble);
 

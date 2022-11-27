@@ -33,21 +33,45 @@ body {
     background-image: url("../Bubbles/Popped.png");
 }
 
+#header {
+    margin-left: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 50px;
+    text-align: left;
+}
+
 #popCount {
     font-weight: 600;
     text-align: left;
     font-size: 50px;
     line-height: 50px;
-    margin-left: 35px;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: inline-block;
+}
+
+
+/* same appearance for both themes */
+
+#refresh {
+    width: 50px;
+    height: 50px;
+    color: whitesmoke;
+}
+
+#refreshIcon {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0%);
 }
 
 #links {
-    text-align: right;
+    text-align: center;
     position: absolute;
-    right: 10px;
-    top: 10px;
+    width: 100%;
+    bottom: 10px;
 }
 
 .link {
