@@ -2,9 +2,15 @@ let bubbleLayout = document.getElementById("bubblesLayout");
 let popCounter = document.getElementById("popCount");
 
 const bubbleSize = 64;
+const unpoppedClass = "bubble";
+const poppedClass = "poppedBubble";
 
-//same as createbubblewrap
+//create bubble wrap with sound
 function Refresh() {
+    let clip = audioClips[getRandomInt(5, 7)];
+    clip.volume = 0.75;
+    clip.play();
+
     CreateBubbleWrap();
 }
 
@@ -36,11 +42,25 @@ let totalBubblesPopped = 0;
 //Creates a bubble element and append to grid
 function CreateBubble() {
     let bubble = document.createElement("button");
-    bubble.className = "bubble";
-    //pop with pointer
-    // bubble.onmouseenter = function() { PopBubble(bubble) };
-    bubble.onpointerover = function() { PopBubble(bubble) };
-    // bubble.onclick = function() { PopBubble(bubble) };
+    bubble.className = unpoppedClass;
+
+    //Events to pop the bubble
+    // Mouse down and over bubble
+    bubble.onmouseenter = function () {
+        if (mouseDown) {
+            PopBubble(bubble)
+        }
+    };
+    // Otherwise the first clicked bubble doesn't pop
+    bubble.onmousedown = function () {
+        if (!mouseDown) {
+            PopBubble(bubble)
+        }
+    };
+    // Using tab and enter counts as a 'click'. 
+    bubble.onclick = function () {
+        PopBubble(bubble)
+    };
 
     bubbleLayout.appendChild(bubble);
 
@@ -50,10 +70,10 @@ function CreateBubble() {
 //Play sound, change appearance and add to counter
 function PopBubble(bubble) {
     //don't pop twice
-    if (bubble.classList.contains("poppedBubble")) {
+    if (bubble.classList.contains(poppedClass)) {
         return;
     }
-    bubble.classList.add("poppedBubble");
+    bubble.classList.add(poppedClass);
     bubblesPopped++;
 
     totalBubblesPopped++;
@@ -62,17 +82,20 @@ function PopBubble(bubble) {
     PopSound();
 
     if (bubblesPopped >= bubblesCreated) {
-        CreateBubbleWrap();
+        Refresh();
     }
 }
 
 //SFX
 let audioClips = [
-    new Audio("Pops/Pop1.wav"),
-    new Audio("Pops/Pop2.wav"),
-    new Audio("Pops/Pop3.wav"),
-    new Audio("Pops/Pop4.wav"),
-    new Audio("Pops/Pop5.wav"),
+    new Audio("Sounds/Pops/Pop1.wav"),
+    new Audio("Sounds/Pops/Pop2.wav"),
+    new Audio("Sounds/Pops/Pop3.wav"),
+    new Audio("Sounds/Pops/Pop4.wav"),
+    new Audio("Sounds/Pops/Pop5.wav"),
+    new Audio("Sounds/Swoosh 1.mp3"),
+    new Audio("Sounds/Swoosh 2.mp3"),
+    new Audio("Sounds/Swoosh 3.mp3"),
 ]
 
 function PopSound() {
@@ -118,6 +141,16 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+let mouseDown = false;
+document.onmousedown = function () {
+    mouseDown = true;
+}
 
-Load();
-CreateBubbleWrap();
+document.onmouseup = function () {
+    mouseDown = false;
+}
+
+window.onload = function () {
+    Load();
+    CreateBubbleWrap();
+}

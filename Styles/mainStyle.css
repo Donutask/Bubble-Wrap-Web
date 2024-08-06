@@ -27,10 +27,38 @@ body {
     border: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+
+    animation: grow 0.2s;
+
 }
 
 .poppedBubble {
     background-image: url("../Bubbles/Popped.png");
+    animation: shrink 0.1s;
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.95);
+    }
+
+    to {
+        transform: scale(1);
+    }
 }
 
 #header {
@@ -39,12 +67,14 @@ body {
     margin-bottom: 15px;
     height: 50px;
     text-align: left;
+    white-space: nowrap;
 }
 
 #popCount {
     font-weight: 600;
     text-align: left;
     font-size: 40px;
+    overflow: none;
     line-height: 50px;
     margin-left: 10px;
     margin-top: 0px;
@@ -59,14 +89,14 @@ body {
     width: 45px;
     height: 45px;
     color: whitesmoke;
+    padding: 2.5px;
 }
 
 #refreshIcon {
+    filter: brightness(0%);
     width: 35px;
     height: 35px;
-    margin: 0px;
-    padding: 0px;
-    filter: brightness(0%);
+    text-align: center;
 }
 
 #links {
@@ -74,6 +104,8 @@ body {
     position: absolute;
     width: 100%;
     bottom: 10px;
+    overflow: hidden;
+    height: 20px;
 }
 
 .link {
@@ -88,4 +120,18 @@ body {
 
 .link:hover {
     color: blue;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: white;
+        background-color: black;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        color: black;
+        background-color: whitesmoke;
+    }
 }

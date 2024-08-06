@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Bubble Wrap </title>
+    <title>Bubble Wrap</title>
+    <meta name="description" content="Simple, relaxing antistress website">
 
     <link rel="stylesheet" href="Styles/mainStyle.css">
-    <link id="themeStylesheet" rel="stylesheet" href="Styles/lightStyle.css">
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,25 +16,26 @@
 </head>
 
 <body>
-
+    <noscript>JavaScript is required for this game to work.</noscript>
 
     <div id="header">
-        <button onclick="Refresh()" id="refresh">
-        <img src="Icons/refresh.png" id="refreshIcon">
-    </button>
-        <h1 id="popCount">1234</h1>
+        <button onclick="Refresh()" id="refresh" aria-label="Refresh">
+            <img src="Icons/refresh.png" id="refreshIcon" alt="Refresh">
+        </button>
+        <h1 id="popCount"></h1>
     </div>
 
     <div id="bubblesLayout">
     </div>
 
     <div id="links">
-        <a class="link" href="https://github.com/Donutask/Bubble-Wrap-Web">Source Code</a>
+        <a class="link" href="https://store.steampowered.com/app/2718700/Bubble_Wrap/">Steam Version</a>
+        <a class="link" href="https://play.google.com/store/apps/details?id=com.donutask.bubblewrap">Android App</a>
         <a class="link" href="https://www.youtube.com/channel/UC0OBisfM_ZRwf0sfDJ1Q0YQ">YouTube</a>
-        <a class="link" href="https://play.google.com/store/apps/details?id=com.donutask.bubblewrap">App</a>
+        <a class="link" href="https://github.com/Donutask/Bubble-Wrap-Web">Source Code</a>
+        <a class="link" href="https://donutask.com">Homepage</a>
     </div>
 
-    <script src="theme.js"></script>
     <script src="script.js"></script>
 </body>
 
