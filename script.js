@@ -11,11 +11,11 @@ function Refresh() {
     clip.volume = 0.75;
     clip.play();
 
-    CreateBubbleWrap();
+    CreateBubbleWrap(true);
 }
 
 //Makes bubbles to try and fill screen
-function CreateBubbleWrap() {
+function CreateBubbleWrap(animate = false) {
     bubbleLayout.innerHTML = "";
 
     let columns = Math.round(((bubbleLayout.clientWidth - 50) / (bubbleSize + 10)));
@@ -27,7 +27,10 @@ function CreateBubbleWrap() {
     bubblesCreated = columns * rows;
 
     for (let i = 0; i < bubblesCreated; i++) {
-        CreateBubble();
+      let bubble =  CreateBubble();
+      if(animate){
+        bubble.classList.add("animate");
+      }
     }
 
     bubblesPopped = 0;
@@ -73,14 +76,16 @@ function PopBubble(bubble) {
     if (bubble.classList.contains(poppedClass)) {
         return;
     }
+    bubble.style.transform = "rotate(" + getRandomInt(0, 360) + "deg)";
     bubble.classList.add(poppedClass);
+    bubble.classList.remove("animate");
+
     bubblesPopped++;
 
     totalBubblesPopped++;
     popCounter.innerHTML = totalBubblesPopped;
 
     PopSound();
-
     if (bubblesPopped >= bubblesCreated) {
         Refresh();
     }
@@ -152,5 +157,9 @@ document.onmouseup = function () {
 
 window.onload = function () {
     Load();
+    CreateBubbleWrap(true);
+}
+
+window.onresize = function(){
     CreateBubbleWrap();
 }

@@ -2,6 +2,10 @@ body {
     margin: 0px;
     overflow: hidden;
     font-family: 'Roboto', sans-serif;
+
+    color: black;
+    background-color: whitesmoke;
+
     /* variables */
     --bubbleSize: 64px;
 }
@@ -15,7 +19,7 @@ body {
 }
 
 .bubble {
-    background-image: url("../Bubbles/Bubble.png");
+    background-image: url("Bubbles/Bubble-small.png");
     background-color: rgba(0, 0, 0, 0);
     background-repeat: no-repeat;
     background-position: center;
@@ -27,28 +31,14 @@ body {
     border: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+}
 
+.animate {
     animation: grow 0.2s;
-
 }
 
 .poppedBubble {
-    background-image: url("../Bubbles/Popped.png");
-    animation: shrink 0.1s;
-}
-
-@keyframes shrink {
-    from {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(0.95);
-    }
-
-    to {
-        transform: scale(1);
-    }
+    background-image: url("Bubbles/Popped-small.png");
 }
 
 @keyframes grow {
@@ -127,11 +117,8 @@ body {
         color: white;
         background-color: black;
     }
-}
 
-@media (prefers-color-scheme: light) {
-    body {
-        color: black;
-        background-color: whitesmoke;
+    .link:hover {
+        color: rgb(0, 132, 255);
     }
 }
